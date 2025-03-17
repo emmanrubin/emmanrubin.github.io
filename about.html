@@ -10,8 +10,6 @@
 
   <!-- Favicons -->
   <link href="assets/img/logo.png" rel="icon">
-  <link href="assets/img/about_photo.jpg">
-
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -24,9 +22,6 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  
-  <!-- Font Awesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
@@ -40,19 +35,23 @@
   ======================================================== -->
 </head>
 
-<body class="about-page">
-    <header id="header" class="header d-flex align-items-center sticky-top">
-      <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+<body class="portfolio-page">
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+        <div class="mobile-logo"><span>Emma Rubin</span><span class="small-text"></span></div>
         <nav id="navmenu" class="navmenu">
-          <ul>
-            <li class="logo"><span>Emma Rubin</span><span class="small-text"><br>Data journalist</span></li> <!-- Logo as list item -->
-            <li><a href="index.html">Select clips</a></li>
-            <li><a href="otherProjects.html">Other projects</a></li>
-            <li><a href="about.html" class="active">About</a></li>
-          </ul>
+            <ul>
+                <li class="logo"><span>Emma Rubin</span><span class="small-text"></span></li>
+                <li><a href="index.html" class="active">Select clips</a></li>
+                <li><a href="otherProjects.html">Other projects</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
         </nav>
-      </div>
-    </header>
+        <div class="mobile-nav-toggle">
+            <i class="bi bi-list"></i>
+        </div>
+    </div>
+</header>
     <!-- About Section -->
     <section id="about" class="about section">
       <br>
@@ -75,20 +74,19 @@
             <a href="mailto:emmanrubin@gmail.com" style="text-decoration: none;">
               <i class="fas fa-envelope fa-lg"></i>
             </a>
-            &nbsp&nbsp&nbsp Emmanrubin@gmail.com
           </div>
           </div>
           <!--add social media icons below image-->
           <div class="col-lg-8 content">
             <h2>Hi! I'm Emma</h2>
             <p>
-              I’m a data reporter and editor, currently overseeing graphics and data-driven storytelling at <a href='https://stacker.com/stories'>Stacker.</a> I'm based in Seattle, Washington.
+              I’m a data journalist, visualization designer, and editor based in Seattle, Washington.
             <br><br>  
               I regularly work with Python, Datawrapper, Adobe Illustrator, GIS, and Google Sheets to find and tell stories through data. My work has largely been as a generalist, but I've most often covered climate change, education, and health.  
             <br><br>  
-              Before Stacker, I volunteered with the COVID Tracking Project and interned at local news outlets including LEO Weekly in Louisville, KY and New England Public Radio in Springfield, MA.
+            I previously oversaw graphics and data-driven storytelling at <a href='https://stacker.com/stories'>Stacker.</a> Before Stacker, I volunteered with the COVID Tracking Project and interned at local news outlets including LEO Weekly in Louisville, KY and New England Public Radio in Springfield, MA.
             <br><br>
-              My full resume is<a href="assets/resume.pdf" target="_blank"> available here.</a>
+              My full resume is<a href="assets/resume.pdf" target="_blank"> available here.</a> If you're interested in working together on a freelance or full-time basis you can contact me directly at <a href="mailto:emmanrubin@gmail.com">emmanrubin@gmail.com</a>.
             </p>
           </div>
         </div>
@@ -112,9 +110,33 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
+  
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const navmenu = document.querySelector('.navmenu');
 
+        if (mobileNavToggle && navmenu) {
+            mobileNavToggle.addEventListener('click', function() {
+                navmenu.classList.toggle('navmenu-active');
+                mobileNavToggle.querySelector('i').classList.toggle('bi-list');
+                mobileNavToggle.querySelector('i').classList.toggle('bi-x');
+            });
+        }
+    });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      window.scrollTo(0, 0); // Scroll to the top of the page
+  });
+</script>
+</body>
+</html>
+
+</main>
 </body>
 
 </html>
