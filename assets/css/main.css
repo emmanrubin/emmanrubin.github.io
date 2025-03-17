@@ -459,6 +459,42 @@ section,
   }
 }
 
+/* Mobile-specific centering */
+@media (max-width: 767px) {
+  .portfolio .portfolio-content {
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Ensure image and info stack vertically */
+    align-items: center; /* Center items horizontally */
+    max-width: 100%; /* Allow full width on mobile */
+    margin: 0 auto; /* Center the whole container */
+  }
+
+  .portfolio .portfolio-content img {
+    max-width: 100%; /* Make image responsive */
+    height: auto;
+    display: block; /* Ensure image is a block element */
+    margin: 0 auto; /* Center the image */
+  }
+
+  .portfolio .portfolio-content .portfolio-info {
+    width: 100%; /* Make info take the full width */
+    align-items: center; /* Center the info content */
+    justify-content: center; /* Center the info content */
+    text-align: center; /* Center the text inside the info */
+    padding: 20px 10px; /* Adjust padding for better spacing */
+  }
+
+  .portfolio .portfolio-content .portfolio-info h4,
+  .portfolio .portfolio-content .portfolio-info p {
+    text-align: center; /* Center the text */
+  }
+
+  .portfolio .portfolio-content .portfolio-info .details-link {
+    left: 50%; /* Center the details link */
+    transform: translateX(-50%); /* Center the details link */
+  }
+}
+
 .portfolio .portfolio-content .portfolio-info .preview-link,
 .portfolio .portfolio-content .portfolio-info .details-link {
   color: #fff;
@@ -633,4 +669,124 @@ section,
 
 .contact .php-email-form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+/* Default styles for desktop */
+.mobile-nav-toggle {
+  display: none; /* Hide the toggle on desktop */
+}
+
+/* Default styles for desktop */
+.mobile-nav-toggle {
+  display: none; /* Hide the toggle on desktop */
+}
+
+/* Add these styles for the logo on desktop */
+.logo {
+  color: var(--nav-color); /* Set the logo color */
+  font-weight: bold; /* Set the logo font weight */
+  font-size: 24px; /* Set the logo font size */
+  margin-right: 20px; /* Add some spacing */
+}
+
+/* Adjust the navmenu ul to include the logo */
+.navmenu ul {
+  display: flex; /* Use flexbox to align items horizontally */
+  align-items: center; /* Align items vertically in the center */
+}
+
+/* Remove the header-left styles on desktop */
+.header-left {
+  display: none; /* Hide the header-left div on desktop */
+}
+
+/* Default styles for desktop */
+.mobile-nav-toggle {
+  display: none; /* Hide toggle on desktop */
+}
+
+.mobile-logo {
+  display: none; /* Hide mobile logo on desktop */
+}
+
+/* Logo styles (desktop) */
+.logo {
+  color: var(--nav-color);
+  font-weight: bold;
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+/* Media query for mobile */
+/* Default styles for desktop */
+.mobile-nav-toggle {
+  display: none;
+}
+
+.mobile-logo {
+  display: none;
+}
+
+/* Logo styles (desktop and mobile) */
+.logo, .mobile-logo { /* Apply styles to both classes */
+  color: #00ad88;
+  font-weight: bold;
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+/* Media query for mobile */
+@media (max-width: 991px) {
+  .header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px 0;
+  }
+
+  .mobile-logo {
+      display: block;
+  }
+
+  .mobile-nav-toggle {
+      display: block;
+  }
+
+  .header .navmenu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: var(--nav-mobile-background-color);
+      height: 0;
+      overflow: hidden;
+      transition: height 0.3s ease;
+  }
+
+  .header .navmenu.navmenu-active {
+      height: auto;
+      overflow: visible;
+  }
+
+  .header .navmenu ul {
+      display: block;
+      text-align: left;
+  }
+
+  .header .navmenu ul li {
+      margin: 0;
+      border-bottom: 1px solid #eee;
+  }
+
+  .header .navmenu ul li:last-child {
+      border-bottom: none;
+  }
+
+  .header .navmenu a {
+      padding: 15px 20px;
+      display: block;
+  }
+
+  .header .navmenu ul li.logo {
+      display: none; /* Hide logo in mobile navigation */
+  }
 }
