@@ -38,16 +38,20 @@
 <body class="portfolio-page">
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li class="logo"><span>Emma Rubin</span><span class="small-text"><br>Data journalist</span></li> <!-- Logo as list item -->
-          <li><a href="index.html" class="active">Select clips</a></li>
-          <li><a href="otherProjects.html">Other projects</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-      </nav>
+        <div class="mobile-logo"><span>Emma Rubin</span><span class="small-text"></span></div>
+        <nav id="navmenu" class="navmenu">
+            <ul>
+                <li class="logo"><span>Emma Rubin</span><span class="small-text"></span></li>
+                <li><a href="index.html" class="active">Select clips</a></li>
+                <li><a href="otherProjects.html">Other projects</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-nav-toggle">
+            <i class="bi bi-list"></i>
+        </div>
     </div>
-  </header>
+</header>
   <main class="main">
     <!-- Main content goes here -->
 
@@ -321,6 +325,28 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const navmenu = document.querySelector('.navmenu');
+
+        if (mobileNavToggle && navmenu) {
+            mobileNavToggle.addEventListener('click', function() {
+                navmenu.classList.toggle('navmenu-active');
+                mobileNavToggle.querySelector('i').classList.toggle('bi-list');
+                mobileNavToggle.querySelector('i').classList.toggle('bi-x');
+            });
+        }
+    });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      window.scrollTo(0, 0); // Scroll to the top of the page
+  });
+</script>
+</body>
+</html>
 
 </main>
 </body>
